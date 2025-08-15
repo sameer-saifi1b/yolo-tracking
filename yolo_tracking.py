@@ -4,7 +4,7 @@ import cv2
 # -------------------------
 # SETTINGS
 # -------------------------
-use_webcam = False        # True = webcam, False = video file
+use_webcam = True       # True = webcam, False = video file
 video_path = "sample_video.mp4"  # Video file path (ignored if webcam = True)
 object_class = 0          # 0=person, 2=car, 3=motorcycle, etc.
 output_file = "output.mp4"  # Save processed video here
@@ -29,9 +29,11 @@ if not cap.isOpened():
 # -------------------------
 # SETUP VIDEO WRITER
 # -------------------------
-fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+fourcc = cv2.VideoWriter_fourcc(*'MJPG')  # Use MJPG for better macOS compatibility
+output_file = "output.avi"  # Save as AVI format
 out = cv2.VideoWriter(output_file, fourcc, 20.0,
                       (int(cap.get(3)), int(cap.get(4))))
+
 
 # -------------------------
 # PROCESS EACH FRAME
