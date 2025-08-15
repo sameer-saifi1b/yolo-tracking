@@ -27,7 +27,7 @@ pip install ultralytics opencv-python numpy
 
 Clone the repository:
 
-git clone https://github.com/YOUR_USERNAME/yolo-tracking.git
+git clone https://github.com/sameer-saifi1b/yolo-tracking.git
 cd yolo-tracking
 
 
